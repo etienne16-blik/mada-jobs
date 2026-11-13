@@ -1,0 +1,40 @@
+MADA JOBS — VERSION COLORÉE ET CONNECTÉE À SUPABASE
+=====================================================
+
+CONTENU
+- index.html : site web responsive, style coloré et élégant.
+- SUPABASE-SETUP.sql : fonctions SQL nécessaires aux missions et retraits simulés.
+- LISEZ-MOI.txt : ce guide.
+
+IMPORTANT
+Les soldes et récompenses sont virtuels. Les demandes de retrait sont des simulations : aucun argent réel n'est envoyé.
+La clé intégrée dans index.html est une clé publishable (publique), jamais une clé service_role.
+
+1) EXTRAIRE LE ZIP
+Extrais le ZIP sur ton téléphone ou ordinateur.
+
+2) CONFIGURER SUPABASE
+Dans Supabase, ouvre SQL Editor, colle le contenu de SUPABASE-SETUP.sql puis clique Run.
+Le script crée les fonctions RPC nécessaires. Il ajoute aussi cinq missions si la table tasks est vide.
+Vérifie dans Authentication que le fournisseur Email est activé.
+
+3) PUBLIER SUR GITHUB
+Dans ton dépôt GitHub, choisis Add file > Upload files.
+Envoie directement à la racine du dépôt les fichiers index.html, LISEZ-MOI.txt et SUPABASE-SETUP.sql (pas le ZIP).
+Valide avec Commit changes.
+Dans Settings > Pages, choisis Deploy from a branch, branche main, dossier /(root), puis Save.
+Attends que GitHub Pages affiche l'adresse du site.
+
+4) URL DANS SUPABASE
+Dans Authentication > URL Configuration, définis Site URL avec l'adresse GitHub Pages.
+Ajoute aussi cette adresse dans Redirect URLs.
+
+5) TEST
+Ouvre le site publié en HTTPS. Crée un compte de test puis connecte-toi.
+Si l'inscription demande une confirmation e-mail, confirme le message avant la connexion.
+
+DÉPANNAGE
+- "Aucune mission active" : vérifie que les cinq lignes ont été ajoutées dans public.tasks et que active = true.
+- Erreur de fonction : relance SUPABASE-SETUP.sql dans SQL Editor.
+- Page blanche : vérifie que index.html est bien à la racine du dépôt et que le navigateur a une connexion Internet.
+- Ne communique jamais ton mot de passe Supabase ni une clé service_role.
